@@ -7,7 +7,7 @@ namespace string2integer
         static void Main(string[] args)
         {
             string response = "No digit found";
-            var result = GetIntFromString("1e0we0wew33");
+            var result = GetIntFromString("5fdfd7xxx3o0");
             if (result.HasValue)
                 response = string.Format("Found digit : {0}", result);
 
@@ -32,21 +32,7 @@ namespace string2integer
 
         static int Concat(int? a, int b)
         {
-
-            int pow = 1;
-            if (b > 0)
-            {
-                while (pow < b)
-                {
-                    pow = ((pow << 2) + pow) << 1;
-                    a = ((a << 2) + a) << 1;
-                }
-            }
-            else
-            {
-                a = ((a << 2) + a) << 1;
-            }
-
+            a = ((a << 2) + a) << 1;
             if (a != null)
                 return a.Value + b;
             else
